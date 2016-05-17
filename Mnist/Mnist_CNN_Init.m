@@ -44,7 +44,7 @@ for layer = 1 : numel(Net.Layers)
         Mapsize = Mapsize - Net.Layers{layer}.kernelsize + 1;        
         for j = 1 : Net.Layers{layer}.outputmaps            
             for i = 1 : Inputmaps
-                  Net.Layers{layer}.Kernel{i}{j} = 0.01* randn(Net.Layers{layer}.kernelsize);
+                  Net.Layers{layer}.Kernel{i}{j} = 1* randn(Net.Layers{layer}.kernelsize);
             end
             Net.Layers{layer}.Bias{j} = 0;
         end
@@ -59,6 +59,6 @@ Features_Num = prod(Mapsize) * Inputmaps;
 
 %This part is process output
 Net.FeaturesBias = zeros(Train_Y_Size(1), 1);
-Net.FeaturesOmega = 0.01*randn(Train_Y_Size(1),Features_Num);
+Net.FeaturesOmega = 0.2*randn(Train_Y_Size(1),Features_Num);
 
 end

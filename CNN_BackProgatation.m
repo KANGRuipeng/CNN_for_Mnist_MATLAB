@@ -9,8 +9,8 @@ Net.Error = Net.Output - Y;
 Net.Loss = 1/2* sum(Net.Error(:) .^ 2) / size(Net.Error, 2);
 
 %  backprop deltas
-%  output delta
-Net.OutputDelta = Net.Error .* (Net.Output .* (1 -Net.Error)); 
+%  output delta ????
+Net.OutputDelta =  Net.Error.* ( Net.Output.* (1 - Net.Output)); 
 %  feature vector delta 192* 10 * 10 * 50;
 Net.FeaturesDelta = (Net.FeaturesOmega' * Net.OutputDelta);  
 

@@ -23,8 +23,8 @@ Net = CNN_Train(Net, Train_X, Train_Y, opts);
 
 [bar,er] = CNN_Test(Net,Test_X, Test_Y);
 
-save Net;
-save bad;
-save er;
+% save Net;
+% save bad;
+% save er;
 
 
